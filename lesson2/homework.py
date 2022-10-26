@@ -19,7 +19,7 @@
 
 age_input = input('Введіть Ваш вік: ')
 
-if age_input.isalpha():
+if not age_input.isdigit():
     print('Досить бавитися!')
 else:
 
