@@ -26,7 +26,6 @@ else:
     age = int(age_input)
     if age < 7:
         print('Де твої батьки?')
-# elif age == 22 or age == 33 or age == 44 or age == 55 or age == 66 or age == 77 or age == 88 or age == 99 or age == 11:
     elif age in (11, 22, 33, 44, 55, 66, 77, 88, 99):
         print('Як цікаво!')
     elif age < 16:
