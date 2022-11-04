@@ -1,7 +1,7 @@
 # Дана довільна строка. Напишіть код, який знайде в ній і виведе на екран кількість слів, які містять
 # дві голосні літери підряд.
 
-text = str(input('Enter you text here to look for words with two vowels in a row: '))
+text = str(input('Enter your text here to look for words with two vowels in a row: '))
 text = text.lower()
 text = text.split()
 vowels = 'aeiou'
