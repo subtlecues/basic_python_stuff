@@ -21,7 +21,7 @@ try:
 except KeyError:
     print('Such city could not be found')
 
-# test cases: Odesa, London, Sydney
+# test cases: 'blablalba', '123456', '!@#$%^&*()', 'Odesa', 'London', Sydney'
 
 
 
