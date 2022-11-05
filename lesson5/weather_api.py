@@ -1,6 +1,6 @@
 import requests
 from pprint import pprint
-# Checking weather in requested city. English city names only.
+# Checking weather in requested city. City names in English language only.
 while True:
     try:
         city_name = input('Please enter city: ')
