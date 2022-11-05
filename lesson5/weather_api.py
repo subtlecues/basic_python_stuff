@@ -1,5 +1,5 @@
 import requests
-
+from pprint import pprint
 # Checking weather in requested city.
 while True:
     try:
@@ -13,10 +13,15 @@ response = requests.get(url)
 data = response.json()
 try:
     temperature = data['main']
-    print(f'Current temperature in {city_name.capitalize()} is ', temperature['temp'], '°C')
+    print(f'Current temperature in {city_name.capitalize()} is', temperature['temp'], '°C')
     print('It feels like', temperature['feels_like'], f'°C in {city_name.capitalize()}')
+
+    wind = data['wind']
+    print(f'Current wind speed in {city_name.capitalize()} is', wind['speed'], 'km per hour.')
 except KeyError:
     print('Such city could not be found')
+
+# test cases: Odesa, London, Sydney
 
 
 
