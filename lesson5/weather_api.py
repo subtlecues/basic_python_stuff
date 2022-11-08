@@ -17,7 +17,7 @@ try:
     print('It feels like', temperature['feels_like'], f'°C in {city_name.capitalize()}')
 
     wind = data['wind']
-    print(f'Current wind speed in {city_name.capitalize()} is', wind['speed'], 'km per hour.')
+    print(f'Current wind speed in {city_name.capitalize()} is', wind['speed'], 'm per second.')
 except KeyError:
     print('Such city could not be found')
 
