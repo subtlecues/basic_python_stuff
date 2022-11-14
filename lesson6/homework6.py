@@ -13,11 +13,12 @@ def floating_numbers(user_input):
     try:
         func_output = float(user_input)
         print(func_output)
+        return func_output
     except Exception as e:
-        print('0')
-    return
-
-#Test cases
+        return print('0')
+#
+#
+# #Test cases
 # floating_numbers(5)
 # floating_numbers('blabla')
 # floating_numbers(160*327)
@@ -39,19 +40,20 @@ def second_func(arg1, arg2):
     Returns:
         either an int result of a multiplication or a tuple, containing args.
     '''
-    arguments = arg1 and arg2
     tuple_args = (arg1, arg2)
     try:
-        if isinstance(arguments, (int, float)):
-            print(arg1*arg2)
-        elif isinstance(arguments, str):
-            print(arg1 + arg2)
+        if isinstance(arg1, (int, float)) and isinstance(arg2, (int, float)):
+            return print(arg1*arg2)
+        elif isinstance(arg1, str) and isinstance(arg2, str):
+            return print(arg1 + arg2)
         else:
-            print(tuple_args)
+            return print(tuple_args)
     except TypeError:
-        print(tuple_args)
+        return print(tuple_args)
 
 # TEST CASES
+# second_func(['6'], 6)
+# print('list and int')
 # second_func(7, 2)
 # print('numbers')
 # second_func('blabla', ' and another blabla')
@@ -62,4 +64,6 @@ def second_func(arg1, arg2):
 # print('int and string')
 # second_func('None', False)
 # print('string and bool')
+# second_func('6',6)
+# print('string and int')
 

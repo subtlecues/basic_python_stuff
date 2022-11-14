@@ -9,11 +9,10 @@
 # форма слова "рік" має відповідати значенню віку користувача (1 - рік, 22 - роки, 35 - років і тд...). Наприклад :
 
 
-teens = ['11', '12', '13', '14', '15', '16', '17', '18', '19',
-         '111', '112', '113', '114', '115', '116', '117', '118', '119']
+
 #list, containing exceptions to be used when looking for correct word form.
 
-seven = False
+
 
 
 def age_input():
@@ -38,6 +37,8 @@ def years_form(user_data=input_data):
     Returns:
         str of correct word form of 'роки' word
     '''
+    teens = ['11', '12', '13', '14', '15', '16', '17', '18', '19',
+             '111', '112', '113', '114', '115', '116', '117', '118', '119']
     if user_data in teens:
         years = 'років'
     elif user_data.endswith('1'):
@@ -61,7 +62,7 @@ def looking_for_seven(entry=input_data):
     Returns:
             bool True if found the '7' digit.
     '''
-    global seven
+    seven = False
     for char in entry:
         if char == '7':
             seven = True
@@ -124,6 +125,7 @@ def final_answer():
     else:
         answer = f'Не зважаючи на те, що Вам {user_age_int} {years_form_value}, білетів вже немає!'
     return answer
+
 
 try:
     final_answer_value = final_answer()
