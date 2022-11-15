@@ -8,13 +8,6 @@
 # Замість <> <> в кожну відповідь підставте значення віку (цифру) та правильну форму слова рік. Для будь-якої відповіді
 # форма слова "рік" має відповідати значенню віку користувача (1 - рік, 22 - роки, 35 - років і тд...). Наприклад :
 
-
-
-#list, containing exceptions to be used when looking for correct word form.
-
-
-
-
 def age_input():
     '''
     Simple function to receive user age input
@@ -50,9 +43,6 @@ def years_form(user_data=input_data):
     return years
 
 
-
-
-
 def looking_for_seven(entry=input_data):
     '''
     Simple function which iterates for '7' digit in user age
@@ -71,9 +61,6 @@ def looking_for_seven(entry=input_data):
     return seven
 
 
-
-
-
 def age_int(user_age=input_data):
     '''
     A simple function to check if entered data can be converted to int value'
@@ -88,8 +75,6 @@ def age_int(user_age=input_data):
         return integer_age
     except Exception as e:
         print('Помилка. Введені дані не є віком.')
-
-
 
 
 def final_answer():
