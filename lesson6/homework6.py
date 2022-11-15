@@ -15,7 +15,8 @@ def floating_numbers(user_input):
         print(func_output)
         return func_output
     except Exception as e:
-        return print('0')
+        print(0)
+        return 0
 #
 #
 # #Test cases

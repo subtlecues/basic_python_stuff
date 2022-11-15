@@ -67,7 +67,7 @@ def looking_for_seven(entry=input_data):
         if char == '7':
             seven = True
         else:
-            seven = seven
+            seven = False
     return seven
 
 
@@ -83,20 +83,18 @@ def age_int(user_age=input_data):
     Returns:
         int value of user input or an Error when data is invalid.
     '''
-    while True:
-        try:
-            integer_age = int(user_age)
-            break
-        except Exception as e:
-            print('Помилка. Введені дані не є віком.')
-            break
-    return integer_age
+    try:
+        integer_age = int(user_age)
+        return integer_age
+    except Exception as e:
+        print('Помилка. Введені дані не є віком.')
 
 
-try:
-    user_age_int = age_int()
-except UnboundLocalError:
-    pass
+
+# try:
+user_age_int = age_int()
+# except UnboundLocalError:
+#     pass
 
 
 def final_answer():
@@ -107,41 +105,29 @@ def final_answer():
     str containing cashiers response.
     '''
     answer = ''
-    if seven_found:
-        answer = f'Вам {user_age_int} {years_form_value}. Вам пощастить!'
-    elif user_age_int == 0:
-        answer = 'А так буває?'
-    elif user_age_int > 122:
-        answer = 'Найстаріша людина в історії прожила 122 роки. А ви, певно, ще й динозаврів пам‘ятаєте? :)'
-    elif user_age_int < 7:
-        answer = f'Тобі ж {user_age_int} {years_form_value}! Де твої батьки?'
-    # elif user_age_int in (11, 22, 33, 44, 55, 66, 77, 88, 99, 111, 122):
-    #     answer = 'Як цікаво!'
-    ### Rudiment of a previous homework, but might as well be used as another case of validation.
-    elif user_age_int < 16:
-        answer = f'Тобі лише {user_age_int} {years_form_value}! А це фільм для дорослих!'
-    elif user_age_int > 65:
-        answer = f'Вам {user_age_int} {years_form_value}? Покажіть пенсійне посвідчення!'
-    else:
-        answer = f'Не зважаючи на те, що Вам {user_age_int} {years_form_value}, білетів вже немає!'
-    return answer
-
-
-try:
-    final_answer_value = final_answer()
-except NameError:
-    pass
-
-def response():
-    '''
-    Executes print of final cashiers answer.
-    Returns:
-    printed str containing complete cashiers answer.
-    '''
     try:
-        print(final_answer_value)
-    except NameError:
+        if 0 < user_age_int < 122 and seven_found:
+            answer = f'Вам {user_age_int} {years_form_value}. Вам пощастить!'
+        elif user_age_int == 0:
+            answer = 'А так буває?'
+        elif user_age_int > 122:
+            answer = 'Найстаріша людина в історії прожила 122 роки. А ви, певно, ще й динозаврів пам‘ятаєте? :)'
+        elif user_age_int < 7:
+            answer = f'Тобі ж {user_age_int} {years_form_value}! Де твої батьки?'
+        # elif user_age_int in (11, 22, 33, 44, 55, 66, 77, 88, 99, 111, 122):
+        #     answer = 'Як цікаво!'
+        ### Rudiment of a previous homework, but might as well be used as another case of validation.
+        elif user_age_int < 16:
+            answer = f'Тобі лише {user_age_int} {years_form_value}! А це фільм для дорослих!'
+        elif user_age_int > 65:
+            answer = f'Вам {user_age_int} {years_form_value}? Покажіть пенсійне посвідчення!'
+        else:
+            answer = f'Не зважаючи на те, що Вам {user_age_int} {years_form_value}, білетів вже немає!'
+        return answer
+    except:
+        return 'Будь ласка, спробуйте ще раз.'
         pass
 
 
-response()
+
+print(final_answer())
