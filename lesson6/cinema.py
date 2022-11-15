@@ -50,7 +50,7 @@ def years_form(user_data=input_data):
     return years
 
 
-years_form_value = years_form()
+
 
 
 def looking_for_seven(entry=input_data):
@@ -71,7 +71,7 @@ def looking_for_seven(entry=input_data):
     return seven
 
 
-seven_found = looking_for_seven()
+
 
 
 def age_int(user_age=input_data):
@@ -91,11 +91,6 @@ def age_int(user_age=input_data):
 
 
 
-# try:
-user_age_int = age_int()
-# except UnboundLocalError:
-#     pass
-
 
 def final_answer():
     '''
@@ -104,6 +99,9 @@ def final_answer():
     Returns:
     str containing cashiers response.
     '''
+    user_age_int = age_int()
+    seven_found = looking_for_seven()
+    years_form_value = years_form()
     answer = ''
     try:
         if 0 < user_age_int < 122 and seven_found:
