@@ -1,0 +1,6 @@
+The game was played. You chose rock. Computer chose paper. Result was You lose against your opponent!
+
+The game was played. You chose rock. Computer chose rock. Result was You tie against your opponent!
+
+The game was played. You chose spock. Computer chose rock. Result was You win against your opponent!
+
