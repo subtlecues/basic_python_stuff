@@ -18,6 +18,6 @@ def test_type_error_2():
 
 
 #
-def test_value_error():
+def test_zero_division_error():
     with pytest.raises(ZeroDivisionError):
         library.exponentiation(0, 0, expo_num=-3)
