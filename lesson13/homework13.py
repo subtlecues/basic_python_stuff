@@ -179,4 +179,3 @@ abc = '123'
 # print(tri2 > my_triangle)
 # print(tri2 <= my_triangle)
 # print(tri2 <= my_triangle)
-# print(my_triangle)
