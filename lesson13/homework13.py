@@ -153,7 +153,6 @@ class Triangle(Figure):
         return self.area() <= other.area()
 
     def __str__(self):
-        """координати його вершин у форматі x1, y1 -- x2, y2 -- x3, y3"""
         return f'Triangle peaks are: {self.a.x},{self.a.y} -- {self.b.x},{self.b.y} -- {self.c.x},{self.c.y}'
 
 
