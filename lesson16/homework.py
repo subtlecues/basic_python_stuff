@@ -31,7 +31,7 @@ class CurrencyForDate:
         nbu_api_url = f'https://bank.gov.ua/NBU_Exchange/exchange?date={date}&json'
         response = requests.get(nbu_api_url)
         response_json = response.json()
-        file = open(f'{date}', 'w')
+        file = open(f'{date}.txt', 'w')
         for i in response_json:
             currency = i.get('CurrencyCodeL')
             amount = i.get('Amount')
