@@ -23,7 +23,7 @@ class CurrencyForDate:
         """
 
         Args:
-            date: str of time in format ddmmyyyy
+            date: str of date in format ddmmyyyy
 
         results in a file with currency rates for UAH and date, received in 'date' argument.
 
