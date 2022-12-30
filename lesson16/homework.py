@@ -14,3 +14,29 @@
 # P.S. Архітектура класу - на розсуд розробника. Не забувайте про DRY, KISS, YAGNI, SRP та перевірки!)
 
 
+import requests
+
+class CurrencyForDate:
+
+    @staticmethod
+    def request_currency(date):
+        """
+
+        Args:
+            date: str of time in format ddmmyyyy
+
+        results in a file with currency rates for UAH and date, received in 'date' argument.
+
+        """
+        nbu_api_url = f'https://bank.gov.ua/NBU_Exchange/exchange?date={date}&json'
+        response = requests.get(nbu_api_url)
+        response_json = response.json()
+        file = open(f'{date}', 'w')
+        for i in response_json:
+            currency = i.get('CurrencyCodeL')
+            amount = i.get('Amount')
+            file.write(f'{currency} to UAH: {amount} \n')
+
+
+a = CurrencyForDate()
+a.request_currency('20022022')
