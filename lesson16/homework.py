@@ -29,13 +29,22 @@ class CurrencyForDate:
 
         """
         nbu_api_url = f'https://bank.gov.ua/NBU_Exchange/exchange?date={date}&json'
-        response = requests.get(nbu_api_url)
-        response_json = response.json()
-        file = open(f'{date}.txt', 'w')
-        for i in response_json:
-            currency = i.get('CurrencyCodeL')
-            amount = i.get('Amount')
-            file.write(f'{currency} to UAH: {amount} \n')
+        try:
+            response = requests.get(nbu_api_url)
+        except Exception as e:
+            print(e)
+            response = None
+        if response:
+            if 200 <= response.status_code <300:
+                try: response_json = response.json()
+                except Exception as e:
+                    print(e)
+                else:
+                    file = open(f'{date}.txt', 'w')
+                    for i in response_json:
+                        currency = i.get('CurrencyCodeL')
+                        amount = i.get('Amount')
+                        file.write(f'{currency} to UAH: {amount} \n')
 
 
 a = CurrencyForDate()
